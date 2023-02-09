@@ -8,13 +8,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class Consumer {
 
-/*
+/* change key-value serializers in application.properties to use
     @KafkaListener(topics = {"hobbit"}, groupId = "spring-boot-kafka")
     public void consume(ConsumerRecord<Integer, String> record){
 
         System.out.println("received | id : " + record.key() + " value: " + record.value());
     }
  */
+
 
     @KafkaListener(topics = {"streams-wordcount-output"}, groupId = "spring-boot-kafka")
     public void consumeWordCount(ConsumerRecord<String, Long> record){
